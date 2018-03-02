@@ -12,3 +12,17 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+Thumbs.db
+.DS_Store
+.gradle
+build/
+out/
+data/
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
