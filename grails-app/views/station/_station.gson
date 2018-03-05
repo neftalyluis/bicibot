@@ -1,0 +1,13 @@
+import bicibot9k.Station
+
+model {
+	Station station
+}
+
+json {
+	id station.id
+	name station.name
+	nearbyStations g.render(station.nearbyStations)
+	location g.render(station.location)
+	status tmpl.status(status: station.status)
+}

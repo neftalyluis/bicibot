@@ -1,6 +1,6 @@
 package bicibot9k
 
-import bicibot9k.embed.EcobiciProperties
+import bicibot9k.EcobiciProperties
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
 import org.springframework.boot.context.properties.EnableConfigurationProperties

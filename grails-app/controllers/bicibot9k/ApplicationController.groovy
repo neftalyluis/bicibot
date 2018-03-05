@@ -1,17 +1,8 @@
 package bicibot9k
 
-import grails.core.GrailsApplication
-import grails.util.Environment
-import grails.plugins.*
-
-class ApplicationController implements PluginManagerAware {
-
-    GrailsApplication grailsApplication
-    GrailsPluginManager pluginManager
-    def bootstrapService
+class ApplicationController {
 
     def index() {
-        bootstrapService.addNearbyStations()
-        [grailsApplication: grailsApplication, pluginManager: pluginManager]
+        [saludo: "Un saludo con firmeza y mucho respeto a toda esa raza que la sigue cotorreando de parte del BiciBot"]
     }
 }

@@ -1,0 +1,8 @@
+import bicibot9k.Station
+
+model {
+	Iterable<Station> stationList
+}
+
+json tmpl.station(stationList ?: [])
+

@@ -1,0 +1,7 @@
+import bicibot9k.Station
+
+model {
+	Station station
+}
+
+json tmpl.station(station)

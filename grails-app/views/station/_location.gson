@@ -1,0 +1,10 @@
+import bicibot9k.embed.Location
+
+model {
+    Location location
+}
+
+json {
+    lat location.lat
+    lon location.lon
+}

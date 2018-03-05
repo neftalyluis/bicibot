@@ -1,0 +1,10 @@
+import bicibot9k.Status
+
+model {
+    Status status
+}
+
+json {
+    bikes status.availability.bikes
+    slots status.availability.slots
+}
