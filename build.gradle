@@ -17,7 +17,7 @@ group "bicibot9k"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-apply plugin:"war"
+//apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"com.energizedwork.webdriver-binaries"
 apply plugin:"com.energizedwork.idea-project-components"
@@ -72,37 +72,13 @@ dependencies {
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
     addResources = true
+    systemProperties System.properties
 }
 
-webdriverBinaries {
-    chromedriver '2.32'
-    geckodriver '0.18.0'
-}
-
-tasks.withType(Test) {
-    systemProperty "geb.env", System.getProperty('geb.env')
-    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
-    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
+springBoot {
+    executable = true
 }
 
 task stage() {
-    dependsOn clean, war
+    dependsOn assemble
 }
-
-tasks.stage.doLast() {
-    delete fileTree(dir: "build/distributions")
-    delete fileTree(dir: "build/assetCompile")
-    delete fileTree(dir: "build/distributions")
-    delete fileTree(dir: "build/libs", exclude: "*.war")
-}
-
-war.mustRunAfter clean
-
-task copyToLib(type: Copy) {
-    into "$buildDir/server"
-    from(configurations.compile) {
-        include "webapp-runner*"
-    }
-}
-
-stage.dependsOn(copyToLib)
