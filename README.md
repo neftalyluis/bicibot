@@ -19,3 +19,5 @@ Asi que voy a automatizar eso porque `pinche hueva`
  ## Que le falta?
   - Endpoint para enviar estaciones cercanas dada una ubicacion (lat, long)
   - Integracion con API's de Bots (Hangouts, FB Messenger, Twitter?)
+  - CI y CD
+  - Pruebas (lol)
