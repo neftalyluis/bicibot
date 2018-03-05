@@ -79,6 +79,15 @@ springBoot {
     executable = true
 }
 
-task stage() {
-    dependsOn assemble
+task stage(type: Copy, dependsOn: assemble) {
+    from jar.archivePath
+    into project.rootDir
+    rename {
+        'app.jar'
+    }
+}
+stage.mustRunAfter(assemble)
+
+clean << {
+    project.file('app.jar').delete()
 }
