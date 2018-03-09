@@ -1,5 +1,6 @@
 package bicibot9k
 
+import bicibot9k.properties.EcobiciProperties
 import groovyx.net.http.HttpBuilder
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.beans.factory.annotation.Autowired

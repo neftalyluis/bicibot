@@ -21,7 +21,7 @@ appender('STDOUT', ConsoleAppender) {
                         '%m%n%wex' // Message
     }
 }
-
+def logLevel = ERROR
 def targetDir = BuildSettings.TARGET_DIR
 if (Environment.isDevelopmentMode() && targetDir != null) {
     appender("FULL_STACKTRACE", FileAppender) {
@@ -32,5 +32,6 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
         }
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
+    logLevel = INFO
 }
-root(ERROR, ['STDOUT'])
+root(logLevel, ['STDOUT'])

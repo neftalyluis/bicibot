@@ -1,4 +1,4 @@
-package bicibot9k
+package bicibot9k.properties
 
 import org.hibernate.validator.constraints.NotBlank
 import org.springframework.boot.context.properties.ConfigurationProperties
