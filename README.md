@@ -1,4 +1,7 @@
-# El bicibot
+# El bicibot 
+[![Build Status](https://travis-ci.org/neftalyluis/bicibot.svg?branch=master)](https://travis-ci.org/neftalyluis/bicibot)
+
+[![Heroku](https://heroku-badge.herokuapp.com/?app=morning-sands-48314&style=flat)]
 
 Me caga salir de mi trabajo y tener que:
 - Buscar como pendejo alguna estacion de Ecobici con bicis disponibles
