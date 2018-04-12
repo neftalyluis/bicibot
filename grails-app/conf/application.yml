@@ -71,12 +71,15 @@ hibernate:
         queries: false
         use_second_level_cache: false
         use_query_cache: false
+    dialect: org.hibernate.spatial.dialect.h2geodb.GeoDBDialect
+
 dataSource:
     pooled: true
     jmxExport: true
     driverClassName: org.h2.Driver
     username: sa
     password: ''
+    platform: geodb
 
 environments:
     development:

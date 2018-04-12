@@ -19,6 +19,7 @@ Thumbs.db
 build/
 out/
 data/
+target/
 .idea
 *.iml
 *.ipr

@@ -1,6 +1,9 @@
 package bicibot9k
 
 import bicibot9k.embed.Location
+import com.vividsolutions.jts.geom.Coordinate
+import com.vividsolutions.jts.geom.GeometryFactory
+import com.vividsolutions.jts.geom.Point
 
 class Station {
     String name
@@ -12,6 +15,7 @@ class Station {
     String altitude
     String stationType
     Location location
+    Point newLocation
     List nearbyStations
 
     static hasMany = [nearbyStations: Long]
@@ -25,5 +29,18 @@ class Station {
         zipCode nullable: true
         altitude nullable: true
         status nullable: true
+        newLocation nullable: true
+    }
+
+    def beforeInsert() {
+        createPoint()
+    }
+
+    def beforeUpdate() {
+        createPoint()
+    }
+
+    def createPoint() {
+        newLocation =  new GeometryFactory().createPoint(new Coordinate(location.lat, location.lon))
     }
 }
